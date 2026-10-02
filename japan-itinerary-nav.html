@@ -308,235 +308,12 @@
     text-align: center;
   }
 
-
-  /* ===== SIDEBAR LAYOUT ===== */
-  html { scroll-behavior: smooth; }
-
-  body {
-    max-width: none;
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-  }
-
-  .sidebar {
-    width: 210px;
-    min-width: 210px;
-    position: fixed;
-    top: 0; left: 0;
-    height: 100vh;
-    overflow-y: auto;
-    background: #EEEAE0;
-    border-right: 1px solid #D8D3C4;
-    padding: 28px 0 40px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sidebar-brand {
-    padding: 0 18px 20px;
-    border-bottom: 1px solid #D0CAB8;
-    margin-bottom: 12px;
-  }
-  .sidebar-brand-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    color: #1A1A1A;
-    line-height: 1.3;
-  }
-  .sidebar-brand-sub {
-    font-size: 10.5px;
-    color: #8A7A5A;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-top: 3px;
-    display: block;
-  }
-
-  .sidebar-section {
-    margin-bottom: 4px;
-  }
-  .sidebar-leg {
-    font-size: 9.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #8A7A5A;
-    padding: 8px 18px 4px;
-    display: block;
-  }
-  .sidebar-day {
-    display: flex;
-    align-items: baseline;
-    gap: 7px;
-    padding: 5px 18px;
-    font-size: 12px;
-    color: #4A4A4A;
-    text-decoration: none;
-    border-left: 2px solid transparent;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
-    line-height: 1.35;
-  }
-  .sidebar-day:hover {
-    background: #E0D9CC;
-    color: #1A1A1A;
-  }
-  .sidebar-day.active {
-    border-left-color: #8A7A5A;
-    background: #E0D9CC;
-    color: #1A1A1A;
-    font-weight: 500;
-  }
-  .sidebar-day-date {
-    font-size: 10.5px;
-    color: #A69B85;
-    white-space: nowrap;
-    flex-shrink: 0;
-    min-width: 38px;
-  }
-  .sidebar-day.active .sidebar-day-date { color: #8A7A5A; }
-  .sidebar-misc {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 5px 18px;
-    font-size: 12px;
-    color: #4A4A4A;
-    text-decoration: none;
-    border-left: 2px solid transparent;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .sidebar-misc:hover {
-    background: #E0D9CC;
-    color: #1A1A1A;
-    border-left-color: #C4B89A;
-  }
-
-  .main-content {
-    margin-left: 210px;
-    max-width: 720px;
-    padding: 40px 32px 60px;
-    flex: 1;
-  }
-
-  .mobile-nav {
-    display: none;
-  }
-
-  @media (max-width: 720px) {
-    body { flex-direction: column; }
-    .sidebar { display: none; }
-    .main-content { margin-left: 0; padding: 24px 18px 48px; }
-    .mobile-nav {
-      display: block;
-      position: sticky;
-      top: 0;
-      background: #EEEAE0;
-      border-bottom: 1px solid #D8D3C4;
-      z-index: 100;
-      padding: 10px 16px;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .mobile-nav a {
-      display: inline-block;
-      margin-right: 8px;
-      font-size: 12px;
-      color: #4A4A4A;
-      text-decoration: none;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: #E0D9CC;
-    }
-    .mobile-nav a.active { background: #2C2C2C; color: #F5F5F0; }
-  }
-
-  @media print {
-    .sidebar { display: none; }
-    .mobile-nav { display: none; }
-    .main-content { margin-left: 0; }
-  }
-
   @media print {
     body { background: white; }
   }
 </style>
 </head>
 <body>
-
-<!-- MOBILE NAV -->
-<nav class="mobile-nav" id="mobileNav">
-  <a href="#day-oct-2">Oct 2</a><a href="#day-oct-3">Oct 3</a><a href="#day-oct-4">Oct 4</a>
-  <a href="#day-oct-5">Oct 5</a><a href="#day-oct-6">Oct 6</a><a href="#day-oct-7">Oct 7</a>
-  <a href="#day-oct-8">Oct 8</a><a href="#day-oct-9">Oct 9</a><a href="#day-oct-10">Oct 10</a>
-  <a href="#day-oct-11">Oct 11</a><a href="#day-oct-12">Oct 12</a><a href="#day-oct-13">Oct 13</a>
-  <a href="#leg-transport">Transport</a>
-</nav>
-
-<!-- SIDEBAR -->
-<nav class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <div class="sidebar-brand-title">Japan, <em>Slowly</em></div>
-    <span class="sidebar-brand-sub">Oct 2–13, 2026</span>
-  </div>
-
-  <div class="sidebar-section">
-    <span class="sidebar-leg">🌿 Aomori</span>
-    <a href="#day-oct-2" class="sidebar-day" data-day="day-oct-2">
-      <span class="sidebar-day-date">Oct 2</span>Arrive → Aomori
-    </a>
-    <a href="#day-oct-3" class="sidebar-day" data-day="day-oct-3">
-      <span class="sidebar-day-date">Oct 3</span>Hirosaki + Sannai Maruyama
-    </a>
-    <a href="#day-oct-4" class="sidebar-day" data-day="day-oct-4">
-      <span class="sidebar-day-date">Oct 4</span>AOMOMA · rest
-    </a>
-    <a href="#day-oct-5" class="sidebar-day" data-day="day-oct-5">
-      <span class="sidebar-day-date">Oct 5</span>Oirase Gorge
-    </a>
-    <a href="#day-oct-6" class="sidebar-day" data-day="day-oct-6">
-      <span class="sidebar-day-date">Oct 6</span>Hakkoda
-    </a>
-  </div>
-
-  <div class="sidebar-section">
-    <span class="sidebar-leg">🏯 Sendai</span>
-    <a href="#day-oct-7" class="sidebar-day" data-day="day-oct-7">
-      <span class="sidebar-day-date">Oct 7</span>Aomori → Sendai
-    </a>
-    <a href="#day-oct-8" class="sidebar-day" data-day="day-oct-8">
-      <span class="sidebar-day-date">Oct 8</span>Matsushima Bay
-    </a>
-  </div>
-
-  <div class="sidebar-section">
-    <span class="sidebar-leg">🗾 Tokyo</span>
-    <a href="#day-oct-9" class="sidebar-day" data-day="day-oct-9">
-      <span class="sidebar-day-date">Oct 9</span>Sendai → Tokyo
-    </a>
-    <a href="#day-oct-10" class="sidebar-day" data-day="day-oct-10">
-      <span class="sidebar-day-date">Oct 10</span>Karuizawa
-    </a>
-    <a href="#day-oct-11" class="sidebar-day" data-day="day-oct-11">
-      <span class="sidebar-day-date">Oct 11</span>Kamakura
-    </a>
-    <a href="#day-oct-12" class="sidebar-day" data-day="day-oct-12">
-      <span class="sidebar-day-date">Oct 12</span>Ueno + Akihabara
-    </a>
-    <a href="#day-oct-13" class="sidebar-day" data-day="day-oct-13">
-      <span class="sidebar-day-date">Oct 13</span>Depachika + Fly
-    </a>
-  </div>
-
-  <div class="sidebar-section">
-    <span class="sidebar-leg">📋 Reference</span>
-    <a href="#leg-transport" class="sidebar-misc">Transport Summary</a>
-  </div>
-</nav>
-
-<!-- MAIN CONTENT WRAPPER -->
-<div class="main-content">
 
 <header>
   <span class="trip-label">Girls' Trip · Autumn Foliage</span>
@@ -558,22 +335,22 @@
 
 <div class="notes-box">
   <p><strong>Why this order:</strong> Aomori first, since you're travelling with luggage on arrival day regardless — no point checking into a Tokyo hotel first just to leave again. Sendai sits directly on the line back down, so it costs nothing extra to break the journey there instead of racing straight through. Tokyo last for shopping and easy departure.</p>
-  <p><strong>JR EAST PASS (5-day, ¥35,000 pp):</strong> activate at Narita on Oct 2. Covers Narita Express, the big Tokyo→Aomori Shinkansen, and local JR trains in Aomori through Oct 6. The Aomori→Sendai leg on Oct 7 falls just outside the window — buy that one individually, it's cheap.</p>
-  <p><strong>Rental car in Aomori:</strong> book via Toyota Rent-A-Car or JR Rent-A-Car before you leave Singapore. International Driving Permit needed for whoever drives — get it from Singapore AA, ~20 minutes, ~SGD 20.</p>
+  <p><strong>JR EAST PASS (10-day, ¥50,000 pp — already purchased):</strong> activate at Narita on Oct 2. The new unified pass (launched March 2026) covers all JR East lines — Tohoku, Koshinetsu, and Kanto — in one ticket, which means it now covers almost this entire trip: Narita Express, Tokyo↔Aomori, Hirosaki limited express, Aomori↔Sendai, the Senseki Line to Matsushima, Sendai↔Tokyo, Tokyo↔Karuizawa, and Tokyo↔Kamakura are all included. Activated Oct 2, the 10 consecutive days run through Oct 11 — only the final Narita Express on Oct 13 falls outside the window and needs a separate ticket (~¥3,250 pp). This is a big upgrade from booking individual tickets — no more per-segment purchases, and reserved seats on the busy Hayabusa trains come free with the pass.</p>
+  <p><strong>Rental car in Aomori:</strong> booked for Oct 4, 10am – Oct 6, 7pm (3 days) — pick up at Shin-Aomori Station. This covers the Hachinohe day trip, Oirase Gorge, and Hakkoda; Hirosaki on Oct 3 is by train since the car isn't active yet. International Driving Permit needed for whoever drives — get it from Singapore AA, ~20 minutes, ~SGD 20.</p>
   <p><strong>The one date-sensitive booking:</strong> Sushi Kadowaki (Ginza) is closed Sundays — it's placed on the Karuizawa day (Saturday) for this reason. Call ahead as soon as dates are confirmed; it books out weeks in advance.</p>
 </div>
 
 <!-- ===================== AOMORI ===================== -->
 <div class="leg-header">
-  <span class="leg-name" id="leg-aomori">Aomori</span>
-  <span class="leg-sub">Oct 2 – 7 · 5 nights · the nature-heavy leg</span>
+  <span class="leg-name">Aomori</span>
+  <span class="leg-sub">Oct 2 – 7 · 5 nights · Hirosaki, Hachinohe, Oirase, Hakkoda</span>
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-2">Oct 2</span><span class="day-weekday">Friday</span></div>
+  <div class="day-head"><span class="day-date">Oct 2</span><span class="day-weekday">Friday</span></div>
   <div class="day-title">Arrive Narita → Straight to Aomori</div>
   <div class="day-subtitle">The furthest leg first, done in one push while you're already moving with luggage</div>
-  <div class="transit-bar"><strong>Route:</strong> Narita → Tokyo Station (Narita Express, 55 min) → Shin-Aomori (Hayabusa Shinkansen, 3h 10min direct). Total ~4.5 hrs door to door including the connection. Covered by JR EAST PASS.</div>
+  <div class="transit-bar"><strong>Route:</strong> Narita → Tokyo Station (Narita Express, 55 min) → Shin-Aomori (Hayabusa Shinkansen, 3h 10min direct). Total ~4.5 hrs door to door including the connection. Covered by your 10-day JR EAST PASS from the moment you activate it.</div>
   <div class="act">
     <div class="act-time">8:50 AM</div>
     <div class="act-body"><div class="act-name">Land Narita · activate JR EAST PASS</div>
@@ -588,9 +365,9 @@
   </div>
   <div class="act">
     <div class="act-time">~4 PM</div>
-    <div class="act-body"><div class="act-name">Arrive Shin-Aomori · collect rental car</div>
-    <div class="act-desc">JR Rent-A-Car is at the east exit, open until 7pm. Collect tonight so you're ready to drive from tomorrow. Ask for the English GPS and the ETC card for toll roads.</div>
-    <div class="tag-row"><span class="tag tag-transit">Car rental</span></div></div>
+    <div class="act-body"><div class="act-name">Arrive Shin-Aomori · check in</div>
+    <div class="act-desc">No car yet — rental doesn't start until Oct 4, 10am. Check into the hotel, drop bags, settle in.</div>
+    <div class="tag-row"><span class="tag tag-transit">Arrive</span></div></div>
   </div>
   <div class="dining-label">Dinner</div>
   <div class="dining-card">
@@ -600,10 +377,10 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-3">Oct 3</span><span class="day-weekday">Saturday</span></div>
+  <div class="day-head"><span class="day-date">Oct 3</span><span class="day-weekday">Saturday</span></div>
   <div class="day-title">Hirosaki Castle + Sannai Maruyama</div>
-  <div class="day-subtitle">Original castle keep · UNESCO Jomon site · apple country — placed on the weekend since both are flat, spacious sites that absorb crowds well</div>
-  <div class="transit-bar">🚗 45-min drive to Hirosaki, or JR Limited Express (35 min) if you'd rather not drive yet. Return via Sannai Maruyama en route back to Aomori City.</div>
+  <div class="day-subtitle">Original castle keep · UNESCO Jomon site · apple country — done by train since the rental car isn't active until tomorrow</div>
+  <div class="transit-bar">🚆 JR Limited Express to Hirosaki, ~35 min — covered by JR EAST PASS. Return via Sannai Maruyama (bus or taxi) en route back to Aomori City. No car today — pickup is tomorrow at 10am.</div>
   <div class="act">
     <div class="act-time">9:00 AM</div>
     <div class="act-body"><div class="act-name">Hirosaki Castle & Park</div>
@@ -630,30 +407,37 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-4">Oct 4</span><span class="day-weekday">Sunday</span></div>
-  <div class="day-title">Aomori Museum of Art · Rest Day</div>
-  <div class="day-subtitle">In-city, no car needed — a deliberate breather before two active days</div>
+  <div class="day-head"><span class="day-date">Oct 4</span><span class="day-weekday">Sunday</span></div>
+  <div class="day-title">Rental Car Pickup + Hasshoku Center (Hachinohe)</div>
+  <div class="day-subtitle">Giant seafood market · grill-your-own BBQ · a lighter half-day to ease into having the car</div>
+  <div class="transit-bar">🚗 Pick up the rental car at Shin-Aomori Station, 10am sharp. Drive to Hachinohe: ~1h 20–30min via the Michinoku Toll Road and Hachinohe Expressway (~85km). Hasshoku Center is a further 10 min from the Hachinohe/Hachinohe-kita interchange. Round trip driving alone is ~3 hours, so this is a half-day out, not a full one.</div>
   <div class="act">
-    <div class="act-time">Morning</div>
-    <div class="act-body"><div class="act-name">Slow breakfast · Aomori Bay walk</div>
-    <div class="act-desc">Waterfront promenade in morning light. No agenda.</div>
-    <div class="tag-row"><span class="tag tag-nature">Waterfront</span></div></div>
+    <div class="act-time">10:00 AM</div>
+    <div class="act-body"><div class="act-name">Collect rental car · depart for Hachinohe</div>
+    <div class="act-desc">JR Rent-A-Car counter, east exit of Shin-Aomori Station. Ask for the English GPS and the ETC card for toll roads — you'll want both for the drive to Hachinohe and for Oirase/Hakkoda over the next two days.</div>
+    <div class="tag-row"><span class="tag tag-transit">Car rental</span></div></div>
   </div>
   <div class="act">
-    <div class="act-time">Late AM</div>
-    <div class="act-body"><div class="act-name">Aomori Museum of Art (AOMOMA)</div>
-    <div class="act-desc">Building partially buried in earth, echoing the Jomon excavation next door. Chagall's enormous Aleko ballet backdrops are the standout — theatrical scale in a quiet space. 90 minutes is enough.</div>
-    <div class="tag-row"><span class="tag tag-culture">Art</span></div></div>
+    <div class="act-time">~11:30 AM</div>
+    <div class="act-body"><div class="act-name">Hasshoku Center — market, lunch, grill</div>
+    <div class="act-desc">A working seafood market with 60+ stalls along a 170m main street — squid, sea urchin, salmon roe, scallops, all landed at Hachinohe Port. Two ways to eat: build your own Nokkedon (rice bowl — buy a ¥350 rice ticket, then top it with whatever you like from the stalls), or head to Shichirin-mura and grill your own seafood over a charcoal brazier (¥400 grill rental plus whatever you buy). Budget about 2 hours for browsing, eating, and souvenir shopping. Closed Wednesdays — you're fine on a Sunday, but note it for future reference.</div>
+    <div class="tag-row"><span class="tag tag-food">Seafood market · Grill-your-own</span></div></div>
+  </div>
+  <div class="act">
+    <div class="act-time">~1:30 PM</div>
+    <div class="act-body"><div class="act-name">Drive back to Aomori City</div>
+    <div class="act-desc">Same route in reverse, ~1h 20–30min. Back in Aomori by mid-afternoon with the rest of the day genuinely free.</div>
+    <div class="tag-row"><span class="tag tag-transit">Drive</span></div></div>
   </div>
   <div class="act">
     <div class="act-time">Afternoon</div>
-    <div class="act-body"><div class="act-name">Relax · pack for tomorrow</div>
-    <div class="act-desc">Nothing heavy scheduled. You need recovered legs for Oirase and Hakkoda over the next two days.</div></div>
+    <div class="act-body"><div class="act-name">Free time · rest</div>
+    <div class="act-desc">Nothing scheduled. You've got a big two-day driving stretch ahead — Oirase tomorrow, Hakkoda the day after. Use this afternoon to actually rest, or wander Aomori Bay if you've got the energy.</div></div>
   </div>
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-5">Oct 5</span><span class="day-weekday">Monday</span></div>
+  <div class="day-head"><span class="day-date">Oct 5</span><span class="day-weekday">Monday</span></div>
   <div class="day-title">Oirase Gorge + Lake Towada</div>
   <div class="day-subtitle">Best single day of scenery in the entire trip — placed on a weekday deliberately, this is the one worth a quiet gorge 🍁</div>
   <div class="transit-bar">🚗 Drive from Aomori City to Oirase Gorge entrance: ~1h 15min. Arrive before 8am for a near-empty gorge on a Monday.</div>
@@ -678,7 +462,7 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-6">Oct 6</span><span class="day-weekday">Tuesday</span></div>
+  <div class="day-head"><span class="day-date">Oct 6</span><span class="day-weekday">Tuesday</span></div>
   <div class="day-title">Hakkoda Mountains</div>
   <div class="day-subtitle">Ropeway · summit plateau walk · Sukayu Onsen — also a weekday, ropeway queues are far worse on weekends</div>
   <div class="transit-bar">🚗 30-min drive from Aomori City. Check the weather forecast the night before — the ropeway closes in strong wind.</div>
@@ -706,28 +490,34 @@
     <div class="act-desc">Historic 1,000-person hinoki wood communal bath. Milky white sulphur water — one of Japan's original designated hot spring resorts. Separate facilities available if the traditional mixed-gender bath isn't your preference.</div>
     <div class="tag-row"><span class="tag tag-food">Onsen</span></div></div>
   </div>
-  <div class="tip"><strong>Tonight:</strong> return the rental car to Shin-Aomori Station and forward luggage to your Tokyo hotel via Yamato takuhaibin (¥2,000–2,500/bag, arrives next day). Pack only what you need for the Sendai leg.</div>
+  <div class="tip"><strong>By 7pm tonight:</strong> return the rental car to Shin-Aomori Station — this is the end of your 3-day rental window (Oct 4, 10am – Oct 6, 7pm). Give yourself buffer to leave Sukayu Onsen with enough driving time. Also forward luggage to your Tokyo hotel via Yamato takuhaibin (¥2,000–2,500/bag, arrives next day). Pack only what you need for the Sendai leg.</div>
 </div>
 
 <!-- ===================== SENDAI ===================== -->
 <div class="leg-header">
-  <span class="leg-name" id="leg-sendai">Sendai & Matsushima</span>
+  <span class="leg-name">Sendai & Matsushima</span>
   <span class="leg-sub">Oct 7 – 9 · 2 nights · a proper city stop on the way back</span>
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-7">Oct 7</span><span class="day-weekday">Wednesday</span></div>
-  <div class="day-title">Aomori → Sendai</div>
-  <div class="day-subtitle">Short hop south, straight onto the same Shinkansen line</div>
-  <div class="transit-bar"><strong>Route:</strong> Shin-Aomori → Sendai, Hayabusa Shinkansen, ~1h 40min direct. Fare ~¥10,900 pp — outside the JR EAST PASS window, book individually via Ekinet.</div>
+  <div class="day-head"><span class="day-date">Oct 7</span><span class="day-weekday">Wednesday</span></div>
+  <div class="day-title">Aomori Museum of Art → Aomori → Sendai</div>
+  <div class="day-subtitle">One last in-city morning, then the short hop south — the rest day slot moved here since the rental car took over Oct 4</div>
+  <div class="transit-bar"><strong>Route:</strong> Shin-Aomori → Sendai, Hayabusa Shinkansen, ~1h 40min direct. Covered by JR EAST PASS — reserve your seats at the ticket counter or a JR East machine, no extra charge.</div>
   <div class="act">
     <div class="act-time">Morning</div>
-    <div class="act-body"><div class="act-name">Checkout · Hayabusa to Sendai</div>
+    <div class="act-body"><div class="act-name">Checkout · Aomori Museum of Art (AOMOMA)</div>
+    <div class="act-desc">No car needed — in-city, taxi or bus from your hotel. Building partially buried in earth, echoing the Sannai Maruyama excavation. Chagall's enormous Aleko ballet backdrops are the standout — theatrical scale in a quiet space. 90 minutes is enough. Leave bags at the hotel or with bell storage until you head to the station.</div>
+    <div class="tag-row"><span class="tag tag-culture">Art</span></div></div>
+  </div>
+  <div class="act">
+    <div class="act-time">Early PM</div>
+    <div class="act-body"><div class="act-name">Hayabusa to Sendai</div>
     <div class="act-desc">Direct train, no transfer. Buy onigiri or a station bento at Shin-Aomori before boarding.</div>
     <div class="tag-row"><span class="tag tag-transit">Shinkansen</span></div></div>
   </div>
   <div class="act">
-    <div class="act-time">~Midday</div>
+    <div class="act-time">Mid–Late PM</div>
     <div class="act-body"><div class="act-name">Arrive Sendai · check in</div>
     <div class="act-desc">Sendai Station is compact and walkable to most hotels.</div></div>
   </div>
@@ -746,10 +536,10 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-8">Oct 8</span><span class="day-weekday">Thursday</span></div>
+  <div class="day-head"><span class="day-date">Oct 8</span><span class="day-weekday">Thursday</span></div>
   <div class="day-title">Matsushima Bay + Sendai History</div>
   <div class="day-subtitle">One of Japan's three officially designated scenic views</div>
-  <div class="transit-bar">🚆 Sendai Station → Matsushima-Kaigan: JR Senseki Line (local), ~40 min, ¥410 one-way.</div>
+  <div class="transit-bar">🚆 Sendai Station → Matsushima-Kaigan: JR Senseki Line (local), ~40 min. Covered by JR EAST PASS — just tap through with your pass at the gate.</div>
   <div class="act">
     <div class="act-time">8:30 AM</div>
     <div class="act-body"><div class="act-name">Senseki Line to Matsushima-Kaigan</div>
@@ -790,15 +580,15 @@
 
 <!-- ===================== TOKYO ===================== -->
 <div class="leg-header">
-  <span class="leg-name" id="leg-tokyo">Tokyo</span>
+  <span class="leg-name">Tokyo</span>
   <span class="leg-sub">Oct 9 – 13 · 4 nights · day trips, then shopping last</span>
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-9">Oct 9</span><span class="day-weekday">Friday</span></div>
+  <div class="day-head"><span class="day-date">Oct 9</span><span class="day-weekday">Friday</span></div>
   <div class="day-title">Sendai → Tokyo</div>
   <div class="day-subtitle">Short, easy final transit</div>
-  <div class="transit-bar"><strong>Route:</strong> Sendai Station → Tokyo Station, Hayabusa Shinkansen, 90 min direct. Fare ~¥11,410 pp.</div>
+  <div class="transit-bar"><strong>Route:</strong> Sendai Station → Tokyo Station, Hayabusa Shinkansen, 90 min direct. Covered by JR EAST PASS.</div>
   <div class="act">
     <div class="act-time">Morning</div>
     <div class="act-body"><div class="act-name">Checkout · Hayabusa to Tokyo</div>
@@ -821,10 +611,10 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-10">Oct 10</span><span class="day-weekday">Saturday</span></div>
+  <div class="day-head"><span class="day-date">Oct 10</span><span class="day-weekday">Saturday</span></div>
   <div class="day-title">Day Trip: Karuizawa</div>
   <div class="day-subtitle">Waterfall · volcanic park · larch forest cycling · the splurge dinner</div>
-  <div class="transit-bar">🚄 Tokyo/Ueno → Karuizawa: Hokuriku Shinkansen, 70 min, ¥6,020 one-way. First train ~7am, last return ~9pm.</div>
+  <div class="transit-bar">🚄 Tokyo/Ueno → Karuizawa: Hokuriku Shinkansen, 70 min. Covered by JR EAST PASS (coverage extends to Joetsu-myoko, well past Karuizawa). First train ~7am, last return ~9pm.</div>
   <div class="act">
     <div class="act-time">8:30 AM</div>
     <div class="act-body"><div class="act-name">Shiraito Falls</div>
@@ -858,11 +648,11 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-11">Oct 11</span><span class="day-weekday">Sunday</span></div>
+  <div class="day-head"><span class="day-date">Oct 11</span><span class="day-weekday">Sunday</span></div>
   <div class="day-title">Day Trip: Kamakura Temple Hike</div>
   <div class="day-subtitle">Kencho-ji · Tenen Trail · Zuisen-ji · Hokokuji bamboo</div>
   <div class="flag">Honest flag: this lands on a Sunday, which means busier temples than ideal. With only two day-trip slots before your Monday shopping day, and Kadowaki forcing Karuizawa onto Saturday, this was the only place left for it. The Tenen Trail itself is forested and less affected by crowds than the temple grounds — the hike portion should still feel quiet.</div>
-  <div class="transit-bar">🚆 Tokyo Station → Kamakura: JR Yokosuka Line, ~55 min, ¥940 one-way.</div>
+  <div class="transit-bar">🚆 Tokyo Station → Kamakura: JR Yokosuka Line, ~55 min. Covered by JR EAST PASS.</div>
   <div class="act">
     <div class="act-time">8:30 AM</div>
     <div class="act-body"><div class="act-name">Kencho-ji Temple — start of Tenen Trail</div>
@@ -900,37 +690,51 @@
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-12">Oct 12</span><span class="day-weekday">Monday</span></div>
+  <div class="day-head"><span class="day-date">Oct 12</span><span class="day-weekday">Monday</span></div>
   <div class="day-title">Tokyo Shopping — Ueno + Akihabara</div>
-  <div class="day-subtitle">Motorcycle gear · figures · Omotesando evening wind-down</div>
+  <div class="day-subtitle">Pancake queue · motorcycle gear · sukiyaki lunch · figures · Omotesando evening wind-down</div>
+  <div class="flag">Honest heads-up: this is a heavy food day — a soufflé pancake stack in the morning followed by a full sukiyaki lunch a couple hours later. Consider sharing the pancakes between the two of you, or treating Imahan as a lighter lunch set, so you're not overly full for an afternoon of walking Akihabara.</div>
   <div class="act">
-    <div class="act-time">Morning</div>
-    <div class="act-body"><div class="act-name">Ueno — motorcycle helmet shopping</div>
-    <div class="act-desc">Ueno "Bike Town" has the highest concentration of motorcycle gear shops in Tokyo. Tax-free on purchases over ¥5,000 with passport.</div>
-    <div class="tag-row"><span class="tag tag-shop">Helmet · Gear</span></div></div>
+    <div class="act-time">7:00 AM</div>
+    <div class="act-body"><div class="act-name">Benizuru Pancake — join the ticket queue</div>
+    <div class="act-desc">Nishi-Asakusa, near Tawaramachi Station (Ginza Line) — about 10 min from Ueno by train. This is a genuinely divisive spot: some find the fluffy rice-flour soufflé pancakes worth it, others call it an overhyped tourist queue with average pancakes and no locals in sight. The system: arrive early to join the line for a same-day numbered ticket, pay a small deposit, and you're given a timeslot — which could be within the hour or several hours later depending on the day. You then leave and come back at your assigned time. Cash only for the deposit. Given the wait-and-return system, budget flexibility into this morning rather than expecting a quick sit-down breakfast.</div>
+    <div class="tag-row"><span class="tag tag-food">Pancakes · Queue system</span></div></div>
   </div>
   <div class="act">
-    <div class="act-time">Midday</div>
-    <div class="act-body"><div class="act-name">Lunch in Ueno · move to Akihabara</div>
-    <div class="act-desc">3 stops by JR from Ueno.</div>
-    <div class="tag-row"><span class="tag tag-food">Lunch</span></div></div>
+    <div class="act-time">Your slot</div>
+    <div class="act-body"><div class="act-name">Eat at Benizuru</div>
+    <div class="act-desc">Bacon & Eggs Pancake (triple stack with a rich egg yolk sauce) and Honey & Butter Pancake are the two most recommended. Watching the pancakes made to order at the counter is part of the appeal. Closed Wednesdays.</div>
+    <div class="tag-row"><span class="tag tag-food">Breakfast</span></div></div>
+  </div>
+  <div class="act">
+    <div class="act-time">Late Morning</div>
+    <div class="act-body"><div class="act-name">Ueno — motorcycle helmet shopping</div>
+    <div class="act-desc">Short hop from Asakusa/Tawaramachi. Ueno "Bike Town" has the highest concentration of motorcycle gear shops in Tokyo. Tax-free on purchases over ¥5,000 with passport.</div>
+    <div class="tag-row"><span class="tag tag-shop">Helmet · Gear</span></div></div>
+  </div>
+  <div class="dining-label">Lunch</div>
+  <div class="dining-card">
+    <div class="dining-top"><span class="dining-name">Ningyocho Imahan · Ueno Hirokoji Ten</span><span class="dining-price">~¥8,000–8,250 pp</span></div>
+    <div class="dining-desc">Sukiyaki since 1895 — a genuine Tokyo institution, and this branch is right in Ueno, an easy walk from the helmet shops. Thin-sliced marbled wagyu swished tableside in a sweet soy sauce, dipped in beaten raw egg. The lunch set is a notch cheaper than dinner pricing elsewhere in the chain, though still a proper splurge-adjacent meal.</div>
+    <div class="dining-note">Given the pancakes this morning, consider the smaller lunch set rather than a heavier course.</div>
+    <div class="rc-tags"><span class="tag tag-food">Sukiyaki</span></div>
   </div>
   <div class="act">
     <div class="act-time">Afternoon</div>
     <div class="act-body"><div class="act-name">Akihabara — crane games + figure hunting</div>
-    <div class="act-desc">GiGO and Taito Station for crane games. Mandarake and Akiba Cultures Zone as secondhand backup.</div>
+    <div class="act-desc">3 stops by JR from Ueno. GiGO and Taito Station for crane games. Mandarake and Akiba Cultures Zone as secondhand backup.</div>
     <div class="tag-row"><span class="tag tag-shop">Figures · Games</span></div></div>
   </div>
   <div class="dining-label">Evening wind-down</div>
   <div class="dining-card">
     <div class="dining-top"><span class="dining-name">Sakurai Baicha Kenkyujo · Omotesando</span><span class="dining-price">~¥8,000–10,000 pp</span></div>
-    <div class="dining-desc">Japanese tea cafe and bar, 5th floor of the Spiral Building. Calm wind-down after a busier shopping day.</div>
+    <div class="dining-desc">Japanese tea cafe and bar, 5th floor of the Spiral Building. Calm wind-down after a busier shopping day — and a lighter option after two heavy meals earlier.</div>
     <div class="dining-note">Open until 11pm on weekdays — you're going on a Monday so full hours apply.</div>
   </div>
 </div>
 
 <div class="day">
-  <div class="day-head"><span class="day-date" id="day-oct-13">Oct 13</span><span class="day-weekday">Tuesday</span></div>
+  <div class="day-head"><span class="day-date">Oct 13</span><span class="day-weekday">Tuesday</span></div>
   <div class="day-title">Final Morning · Depachika + Departure</div>
   <div class="day-subtitle">Leave hotel by noon · Narita by 2:30pm · depart 4:50pm</div>
   <div class="act">
@@ -956,86 +760,31 @@
 <!-- ===================== TRANSPORT SUMMARY ===================== -->
 <div class="transport-section">
   <div class="leg-header" style="border-bottom:none; margin-bottom:4px;">
-    <span class="leg-name" id="leg-transport">Transport Summary</span>
+    <span class="leg-name">Transport Summary</span>
   </div>
   <table class="summary">
     <tr><th>Date</th><th>Route</th><th>Train / Mode</th><th>Time</th><th>Fare (pp)</th></tr>
-    <tr><td>Oct 2</td><td>Narita → Tokyo</td><td>Narita Express</td><td>55 min</td><td>¥3,070</td></tr>
-    <tr><td>Oct 2</td><td>Tokyo → Shin-Aomori</td><td>Hayabusa Shinkansen</td><td>3h 10min</td><td>¥18,110</td></tr>
-    <tr><td>Oct 3</td><td>Aomori ↔ Hirosaki (if by train)</td><td>JR Limited Express</td><td>35 min each way</td><td>~¥2,000 x2</td></tr>
-    <tr><td>Oct 5–6</td><td>Aomori area driving</td><td>Rental car + tolls</td><td>—</td><td>~¥25,000–30,000 total, split 2 ways</td></tr>
-    <tr><td>Oct 7</td><td>Shin-Aomori → Sendai</td><td>Hayabusa Shinkansen</td><td>1h 40min</td><td>~¥10,900</td></tr>
-    <tr><td>Oct 8</td><td>Sendai ↔ Matsushima-Kaigan</td><td>JR Senseki Line (local)</td><td>40 min each way</td><td>¥410 x2</td></tr>
-    <tr><td>Oct 9</td><td>Sendai → Tokyo</td><td>Hayabusa Shinkansen</td><td>90 min</td><td>¥11,410</td></tr>
-    <tr><td>Oct 10</td><td>Tokyo/Ueno ↔ Karuizawa</td><td>Hokuriku Shinkansen</td><td>70 min each way</td><td>¥6,020 x2</td></tr>
-    <tr><td>Oct 11</td><td>Tokyo ↔ Kamakura</td><td>JR Yokosuka Line</td><td>55 min each way</td><td>¥940 x2</td></tr>
-    <tr><td>Oct 13</td><td>Tokyo → Narita</td><td>Narita Express</td><td>80 min</td><td>¥3,250</td></tr>
-    <tr><td colspan="4" class="fare-total">Approx. total per person, rail only (excl. rental car)</td><td class="fare-total">~¥61,500</td></tr>
+    <tr><td>Oct 2</td><td>Narita → Tokyo</td><td>Narita Express</td><td>55 min</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 2</td><td>Tokyo → Shin-Aomori</td><td>Hayabusa Shinkansen</td><td>3h 10min</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 3</td><td>Aomori ↔ Hirosaki</td><td>JR Limited Express</td><td>35 min each way</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 4</td><td>Aomori ↔ Hachinohe (Hasshoku Center)</td><td>Rental car, expressway</td><td>~1h 20–30min each way</td><td>Included in car rental</td></tr>
+    <tr><td>Oct 4 10am – Oct 6 7pm</td><td>Aomori area driving (Hachinohe, Oirase, Hakkoda)</td><td>Rental car + tolls, 3-day rental</td><td>—</td><td>~¥20,000–25,000 total, split 2 ways</td></tr>
+    <tr><td>Oct 7</td><td>Shin-Aomori → Sendai</td><td>Hayabusa Shinkansen</td><td>1h 40min</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 8</td><td>Sendai ↔ Matsushima-Kaigan</td><td>JR Senseki Line (local)</td><td>40 min each way</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 9</td><td>Sendai → Tokyo</td><td>Hayabusa Shinkansen</td><td>90 min</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 10</td><td>Tokyo/Ueno ↔ Karuizawa</td><td>Hokuriku Shinkansen</td><td>70 min each way</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 11</td><td>Tokyo ↔ Kamakura</td><td>JR Yokosuka Line</td><td>55 min each way</td><td>Covered by pass</td></tr>
+    <tr><td>Oct 13</td><td>Tokyo → Narita</td><td>Narita Express</td><td>80 min</td><td>¥3,250 (outside pass window)</td></tr>
+    <tr><td colspan="4" class="fare-total">JR EAST PASS (10-day, activated Oct 2)</td><td class="fare-total">¥50,000</td></tr>
+    <tr><td colspan="4" class="fare-total">Plus final Narita Express (Oct 13, outside window)</td><td class="fare-total">¥3,250</td></tr>
+    <tr><td colspan="4" class="fare-total">Total per person, rail (excl. rental car)</td><td class="fare-total">~¥53,250</td></tr>
   </table>
-  <div class="tip" style="margin-top:16px;"><strong>JR EAST PASS math:</strong> the 5-day pass (¥35,000) activated Oct 2 covers the Narita Express, the Tokyo→Aomori Shinkansen, and local Aomori trains through Oct 6 — roughly ¥21,000–29,000 of the table above, depending on whether you take the train or drive to Hirosaki. Not a huge saving, but it removes the hassle of individually booking the two priciest segments and guarantees seat reservations on busy Hayabusa trains. Everything from Oct 7 onward is bought individually — cheap enough that it doesn't matter.</div>
+  <div class="tip" style="margin-top:16px;"><strong>JR EAST PASS math:</strong> the individual fares for everything the pass covers add up to roughly ¥61,500 pp — so the ¥50,000 pass is already a genuine saving before you even count the convenience. Activated Oct 2, the 10 consecutive days run through Oct 11, covering every Shinkansen and JR local segment in this itinerary except the very last one — the Narita Express on Oct 13 departure day, which needs a separate ¥3,250 ticket since it falls a day outside the window. Reserved seats on the Hayabusa trains come free with the pass; just book them at a JR East counter or ticket machine as you go, ideally a few days ahead for the busier Oct 2 and Oct 9 legs.</div>
 </div>
 
 <footer>
   Japan · October 2026 · Built for two
 </footer>
-</div><!-- /main-content -->
-
-
-<script>
-(function() {
-  const days = ['oct-2','oct-3','oct-4','oct-5','oct-6','oct-7','oct-8','oct-9','oct-10','oct-11','oct-12','oct-13'];
-  const sidebarLinks = {};
-  days.forEach(d => {
-    const el = document.querySelector(`[data-day="day-${d}"]`);
-    if (el) sidebarLinks[d] = el;
-  });
-
-  function getActiveDay() {
-    let active = days[0];
-    for (const d of days) {
-      const target = document.getElementById(`day-${d}`);
-      if (!target) continue;
-      const rect = target.getBoundingClientRect();
-      if (rect.top <= 120) active = d;
-      else break;
-    }
-    return active;
-  }
-
-  function updateActive() {
-    const active = getActiveDay();
-    Object.keys(sidebarLinks).forEach(d => {
-      sidebarLinks[d].classList.toggle('active', d === active);
-    });
-    // scroll sidebar to keep active link visible
-    const activeEl = sidebarLinks[active];
-    if (activeEl) {
-      const sidebar = document.getElementById('sidebar');
-      const elTop = activeEl.offsetTop;
-      const sidebarHeight = sidebar.clientHeight;
-      if (elTop < sidebar.scrollTop + 80 || elTop > sidebar.scrollTop + sidebarHeight - 80) {
-        sidebar.scrollTo({ top: elTop - sidebarHeight / 2, behavior: 'smooth' });
-      }
-    }
-  }
-
-  // Offset scroll target so header isn't hidden
-  document.querySelectorAll('.sidebar-day, .sidebar-misc, .mobile-nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        const y = target.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    });
-  });
-
-  window.addEventListener('scroll', updateActive, { passive: true });
-  updateActive();
-})();
-</script>
 
 </body>
 </html>
